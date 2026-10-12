@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enterprise Agentic SDLC Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container header-container">
+      <h1>🏛️ Enterprise Agentic SDLC Control Center</h1>
+      <span class="badge-version">BMad 6.12.0 & TEA 1.27.2</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Section 1: Khởi tạo dự án -->
+    <section class="card">
+      <h2>📋 S0 - S1: Khởi tạo dự án & Yêu cầu nghiệp vụ</h2>
+      <div class="form-group">
+        <label for="projName">Tên dự án:</label>
+        <input type="text" id="projName" placeholder="Ví dụ: Hệ thống thanh toán trực tuyến">
+      </div>
+      <div class="form-group">
+        <label for="projDesc">Mô tả dự án:</label>
+        <textarea id="projDesc" rows="3" placeholder="Mô tả chi tiết các tính năng cốt lõi..."></textarea>
+      </div>
+      <div class="form-group">
+        <label for="projVelocity">Năng lực Sprint (Velocity - Story Points):</label>
+        <input type="number" id="projVelocity" value="10">
+      </div>
+      <button onclick="initProject()" class="btn btn-primary">Khởi tạo & Sinh User Stories</button>
+    </section>
+
+    <!-- Section 2: Trạng thái Quality Gates -->
+    <section class="card">
+      <h2>🛡️ Trạng thái Quality Gates (G1 - G5)</h2>
+      <div class="gates-container" id="gatesContainer">
+        <!-- Render động trạng thái các Gate -->
+      </div>
+    </section>
+
+    <!-- Section 3: Lập kế hoạch Sprint -->
+    <section class="card">
+      <h2>📅 S3: Lập kế hoạch Sprint ($bmad-sprint-planning)</h2>
+      <p class="info-text">Tự động phân bổ User Stories vào các Sprint tối ưu dựa trên Velocity.</p>
+      <button onclick="planSprints()" class="btn btn-success">Kích hoạt Sprint Planning</button>
+      <div id="sprintResult" class="sprint-result"></div>
+    </section>
+
+    <!-- Section 4: Rà soát mã nguồn -->
+    <section class="card">
+      <h2>🔍 S4: Rà soát mã nguồn tự động ($bmad-code-review)</h2>
+      <div class="form-group">
+        <label for="codeSnippet">Mã nguồn cần kiểm tra:</label>
+        <textarea id="codeSnippet" rows="6" placeholder="Dán mã nguồn JavaScript của bạn vào đây..."></textarea>
+      </div>
+      <button onclick="runCodeReview()" class="btn btn-warning">Chạy Code Review</button>
+      <div id="reviewResult" class="review-result"></div>
+    </section>
+
+    <!-- Section 5: Traceability Matrix -->
+    <section class="card">
+      <h2>📊 Ma trận truy vết chất lượng (Traceability Matrix)</h2>
+      <button onclick="loadSystemState()" class="btn btn-info">Cập nhật ma trận truy vết</button>
+      <pre id="traceabilityMatrix" class="json-viewer">Nhấn nút để tải dữ liệu truy vết thời gian thực...</pre>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2024 Vibecode Senior Full-Stack Agent. Bảo lưu mọi quyền lợi theo chuẩn Enterprise SDLC.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
+```
+
+---
